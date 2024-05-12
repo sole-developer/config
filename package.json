@@ -1,7 +1,7 @@
 {
 	"name": "@zugruul/config",
-	"version": "1.0.0",
-	"description": "Helpers and tooling for your configuration and it's access",
+	"version": "0.1.0",
+	"description": "Helpers and tooling for your configuration",
 	"main": "src/index.js",
 	"engines": {
 		"node": ">=14",
