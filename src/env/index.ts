@@ -16,7 +16,7 @@ interface FromEnvContext {
 	fallback: <Fallback extends any>(fallback?: Fallback) => FromEnvContext;
 	required: (fallback?: unknown) => FromEnvContext;
 	integer: (params?: { parseBehavior?: "fallback" | "error" }) => number;
-	string: any;
+	string: () => string;
 	number: any;
 	array: any;
 }
@@ -53,9 +53,19 @@ export function fromEnv(envVar: keyof typeof process.env) {
 
 			return int;
 		},
-		string() {},
-		number() {},
-		array(separator: string) {},
+		string() {
+			if (!value?.length || value === "undefined") {
+				return String(fallback);
+			}
+
+			return String(value);
+		},
+		number() {
+			throw new Error("Not implemented");
+		},
+		array(separator: string) {
+			throw new Error("Not implemented");
+		},
 	};
 
 	return ctx;

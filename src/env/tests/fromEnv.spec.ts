@@ -13,9 +13,14 @@ describe("fromEnv", function () {
 			expect(() => fromEnv("BASE_URL").required()).toThrow();
 		});
 
-		it("errors if required() BASE_URL is missing and no fallback is provided", function () {
-			baseUrl.mock();
-			expect(() => fromEnv("BASE_URL").required()).toThrow();
+		it("returns fallback url if required() BASE_URL is missing and a fallback is provided", function () {
+			baseUrl.mock(undefined);
+			expect(fromEnv("BASE_URL").fallback("https://google.com").required().string()).toEqual("https://google.com");
+		});
+
+		it("returns url if required() BASE_URL is NOT missing", function () {
+			baseUrl.mock("https://duckduckgo.com/");
+			expect(fromEnv("BASE_URL").required().string()).toEqual("https://duckduckgo.com/");
 		});
 	});
 
