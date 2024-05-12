@@ -2,9 +2,12 @@
 	"name": "@sole-developer/config",
 	"private": false,
 	"type": "module",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "Helpers and tooling for configuration",
 	"main": "dist/index.js",
+	"files": [
+		"./dist"
+	],
 	"publishConfig": {
 		"directory": "./dist"
 	},
@@ -20,7 +23,8 @@
 		"lint": "eslint ./src/",
 		"test": "vitest --silent=false --run",
 		"test:watch": "vitest --silent=false --watch",
-		"prepare": "husky"
+		"prepare": "husky",
+		"publish": "npm publish --access public"
 	},
 	"keywords": [],
 	"author": "Leonardo Marcelino Vieira",
