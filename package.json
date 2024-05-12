@@ -24,7 +24,7 @@
 		"test": "vitest --silent=false --run",
 		"test:watch": "vitest --silent=false --watch",
 		"prepare": "husky",
-		"publish": "npm publish --access public"
+		"publish-lib": "npm publish --access public"
 	},
 	"keywords": [],
 	"author": "Leonardo Marcelino Vieira",
