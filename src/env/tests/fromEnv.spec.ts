@@ -73,7 +73,7 @@ function prepareEnvVarTest<Value>(envVar: keyof typeof process.env, value: Value
 	const originalValue = process.env[envVar];
 
 	function mock(newValue?: string | number) {
-		if (newValue == null) {
+		if (newValue !== undefined) {
 			return (process.env[envVar] = String(newValue));
 		}
 
