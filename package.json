@@ -2,7 +2,7 @@
 	"name": "@sole-developer/config",
 	"private": false,
 	"type": "module",
-	"version": "0.1.1",
+	"version": "0.1.3",
 	"description": "Helpers and tooling for configuration",
 	"main": "dist/index.js",
 	"files": [
@@ -17,14 +17,14 @@
 	},
 	"scripts": {
 		"changelog": "conventional-changelog -p conventional -i changelog.md -s",
-		"clean": "rimraf ./dist .tsbuildinfo",
-		"clean-build": "pnpm clean && pnpm build",
+		"clean": "rimraf ./dist ./.tsbuildinfo ./node_modules",
+		"clean-build": "pnpm clean && pnpm i && pnpm build",
 		"build": "tsc",
 		"lint": "eslint ./src/",
 		"test": "vitest --silent=false --run",
 		"test:watch": "vitest --silent=false --watch",
 		"prepare": "husky",
-		"publish-lib": "npm publish --access public"
+		"publish-lib": "pnpm clean-build && npm publish --access public"
 	},
 	"keywords": [],
 	"author": "Leonardo Marcelino Vieira",
