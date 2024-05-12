@@ -1,7 +1,9 @@
 {
 	"name": "@sole-developer/config",
+	"private": false,
 	"version": "0.1.0",
 	"description": "Helpers and tooling for configuration",
+	"main": "dist/index.js",
 	"publishConfig": {
 		"directory": "dist"
 	},
@@ -19,16 +21,26 @@
 		"prepare": "husky"
 	},
 	"keywords": [],
-	"author": "",
+	"author": "Leonardo Marcelino Vieira",
 	"license": "MIT",
 	"devDependencies": {
 		"@commitlint/config-conventional": "^19.2.2",
 		"@commitlint/types": "^19.0.3",
 		"commitlint": "^19.3.0",
 		"conventional-changelog-cli": "^5.0.0",
+		"conventional-changelog-eslint": "^6.0.0",
 		"husky": "^9.0.11",
 		"rimraf": "^5.0.7",
 		"typescript": "^5.4.5",
 		"vitest": "^1.6.0"
-	}
+	},
+	"dependencies": {},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/sole-developer/config.git"
+	},
+	"bugs": {
+		"url": "https://github.com/sole-developer/config/issues"
+	},
+	"homepage": "https://github.com/sole-developer/config#readme"
 }
