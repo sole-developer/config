@@ -1,6 +1,7 @@
 {
 	"name": "@sole-developer/config",
 	"private": false,
+	"type": "module",
 	"version": "0.1.0",
 	"description": "Helpers and tooling for configuration",
 	"main": "dist/index.js",
@@ -14,8 +15,9 @@
 	"scripts": {
 		"changelog": "conventional-changelog -p conventional -i changelog.md -s",
 		"clean": "rimraf ./dist .tsbuildinfo",
-		"build": "tsc",
 		"clean-build": "pnpm clean && pnpm build",
+		"build": "tsc",
+		"lint": "eslint ./src/",
 		"test": "vitest --silent=false --run",
 		"test:watch": "vitest --silent=false --watch",
 		"prepare": "husky"
@@ -26,15 +28,18 @@
 	"devDependencies": {
 		"@commitlint/config-conventional": "^19.2.2",
 		"@commitlint/types": "^19.0.3",
+		"@eslint/js": "^9.2.0",
 		"commitlint": "^19.3.0",
 		"conventional-changelog-cli": "^5.0.0",
 		"conventional-changelog-eslint": "^6.0.0",
+		"eslint": "^9.2.0",
+		"globals": "^15.2.0",
 		"husky": "^9.0.11",
 		"rimraf": "^5.0.7",
 		"typescript": "^5.4.5",
+		"typescript-eslint": "^7.8.0",
 		"vitest": "^1.6.0"
 	},
-	"dependencies": {},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/sole-developer/config.git"

@@ -1,6 +1,6 @@
 import { configDefaults, defineConfig } from "vitest/config";
 
-module.exports = defineConfig({
+export default defineConfig({
 	test: {
 		exclude: [...configDefaults.exclude],
 	},

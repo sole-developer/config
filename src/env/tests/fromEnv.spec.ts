@@ -4,8 +4,12 @@ import { fromEnv } from "../index";
 describe("fromEnv", function () {
 	const baseUrl = prepareEnvVarTest("BASE_URL", undefined);
 
-	beforeEach(baseUrl.mock);
-	afterEach(baseUrl.unmock);
+	beforeEach(function () {
+		baseUrl.mock(undefined);
+	});
+	afterEach(function () {
+		baseUrl.unmock();
+	});
 
 	describe("required()", function () {
 		it("errors if required() BASE_URL is missing and no fallback is provided", function () {
@@ -15,7 +19,9 @@ describe("fromEnv", function () {
 
 		it("returns fallback url if required() BASE_URL is missing and a fallback is provided", function () {
 			baseUrl.mock(undefined);
-			expect(fromEnv("BASE_URL").fallback("https://google.com").required().string()).toEqual("https://google.com");
+			expect(fromEnv("BASE_URL").fallback("https://google.com").required().string()).toEqual(
+				"https://google.com"
+			);
 		});
 
 		it("returns url if required() BASE_URL is NOT missing", function () {
@@ -27,8 +33,12 @@ describe("fromEnv", function () {
 	describe("integer()", function () {
 		const port = prepareEnvVarTest("PORT", undefined);
 
-		beforeEach(port.mock);
-		afterEach(port.unmock);
+		beforeEach(function () {
+			port.mock(undefined);
+		});
+		afterEach(function () {
+			port.unmock();
+		});
 
 		it('returns 3000 for "PORT=3000"', function () {
 			port.mock(3000);
@@ -59,11 +69,15 @@ describe("fromEnv", function () {
 	});
 });
 
-function prepareEnvVarTest<Value extends any>(envVar: keyof typeof process.env, value: Value) {
+function prepareEnvVarTest<Value>(envVar: keyof typeof process.env, value: Value) {
 	const originalValue = process.env[envVar];
 
-	function mock(newValue: any) {
-		process.env[envVar] = newValue ?? String(value);
+	function mock(newValue?: string | number) {
+		if (newValue == null) {
+			return (process.env[envVar] = String(newValue));
+		}
+
+		return (process.env[envVar] = String(value));
 	}
 
 	function unmock() {
