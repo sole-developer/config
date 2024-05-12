@@ -6,7 +6,7 @@
 	"description": "Helpers and tooling for configuration",
 	"main": "dist/index.js",
 	"publishConfig": {
-		"directory": "dist"
+		"directory": "./dist"
 	},
 	"engines": {
 		"node": ">=16",
