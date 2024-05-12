@@ -31,5 +31,6 @@
 		"alwaysStrict": true,
 		// "allowUnusedLabels": true,
 		"skipLibCheck": true
-	}
+	},
+	"include": ["./src"]
 }
