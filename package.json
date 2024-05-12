@@ -1,8 +1,7 @@
 {
 	"name": "@sole-developer/config",
 	"version": "0.1.0",
-	"description": "Helpers and tooling for your configuration",
-	"main": "src/index.js",
+	"description": "Helpers and tooling for configuration",
 	"engines": {
 		"node": ">=14",
 		"pnpm": ">=7"
