@@ -1,0 +1,35 @@
+{
+	"compilerOptions": {
+		"incremental": true,
+		"tsBuildInfoFile": "./.tsbuildinfo",
+		"target": "es2016",
+		"module": "commonjs",
+		"rootDir": "./src/",
+		"baseUrl": "./",
+		"paths": {},
+		"typeRoots": [],
+		"types": [],
+		"checkJs": true,
+		"declaration": true,
+		"declarationMap": true,
+		"emitDeclarationOnly": false,
+		"sourceMap": true,
+		"outDir": "./dist",
+		"removeComments": true,
+		"newLine": "crlf",
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+
+		"strict": true,
+		"noImplicitAny": true,
+		"strictNullChecks": true,
+		"strictFunctionTypes": true,
+		"strictBindCallApply": true,
+		"strictPropertyInitialization": true,
+		"noImplicitThis": true,
+		"useUnknownInCatchVariables": true,
+		"alwaysStrict": true,
+		// "allowUnusedLabels": true,
+		"skipLibCheck": true
+	}
+}

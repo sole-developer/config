@@ -1,0 +1,32 @@
+{
+	"name": "@zugruul/config",
+	"version": "1.0.0",
+	"description": "Helpers and tooling for your configuration and it's access",
+	"main": "src/index.js",
+	"engines": {
+		"node": ">=14",
+		"pnpm": ">=7"
+	},
+	"scripts": {
+		"changelog": "conventional-changelog -p conventional -i changelog.md -s",
+		"clean": "rimraf ./dist .tsbuildinfo",
+		"build": "tsc",
+		"clean-build": "pnpm clean && pnpm build",
+		"test": "vitest --silent=false --run",
+		"test:watch": "vitest --silent=false --watch",
+		"prepare": "husky"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "MIT",
+	"devDependencies": {
+		"@commitlint/config-conventional": "^19.2.2",
+		"@commitlint/types": "^19.0.3",
+		"commitlint": "^19.3.0",
+		"conventional-changelog-cli": "^5.0.0",
+		"husky": "^9.0.11",
+		"rimraf": "^5.0.7",
+		"typescript": "^5.4.5",
+		"vitest": "^1.6.0"
+	}
+}
